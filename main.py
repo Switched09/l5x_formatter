@@ -25,6 +25,6 @@ def format_l5x(input_file, output_file):
         print(f"Error processing the L5X file: {e}")
 
 # Example usage
-input_file = "/home/pedro/Documents/PLC_Program/Pembina_ENT_SITE_L73_L5X_File.L5X"  # Adjust path accordingly
-output_file = "/home/pedro/Documents/PLC_Program/Pembina_ENT_SITE_L73_L5X_File_Ident.L5X"
+input_file =  "/home/user/Documents/PLC_Program/PLC_Program_L5X_File.L5X"          # Path for the Original L5X file
+output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Ident.L5X"    # Path for the Idented L5X file
 format_l5x(input_file, output_file)
