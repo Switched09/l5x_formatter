@@ -1,24 +1,30 @@
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 
-# Define file paths
-input_file = "~/Documents/PLC_Program/Pembina_ENT_SITE_L73_L5X_File.L5X"  # Replace with actual file path
-output_file = "~/Documents/PLC_Program/Pembina_ENT_SITE_L73_L5X_File_Ident.L5X"  # Replace with actual file path
+def format_l5x(input_file, output_file):
+    try:
+        # Read and parse the XML content
+        tree = ET.parse(input_file)
+        root = tree.getroot()
 
-try:
-    # Read and parse the XML content
-    tree = ET.parse(input_file)
-    root = tree.getroot()
+        # Convert XML to a formatted string
+        rough_string = ET.tostring(root, encoding="utf-8")
+        dom = xml.dom.minidom.parseString(rough_string)
 
-    # Convert XML to a properly formatted string
-    rough_string = ET.tostring(root, encoding="utf-8")
-    formatted_xml = xml.dom.minidom.parseString(rough_string).toprettyxml(indent="    ")  # 4 spaces
+        # Properly format XML without extra blank lines
+        formatted_xml = "\n".join([line for line in dom.toprettyxml(indent="    ").split("\n") if line.strip()])
 
-    # Save formatted XML to the output file
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(formatted_xml)
+        # Save formatted XML to the output file
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(formatted_xml)
 
-    print(f"Formatted .L5X file saved to: {output_file}")
+        print(f"Formatted .L5X file saved to: {output_file}")
 
-except Exception as e:
-    print(f"Error processing the L5X file: {e}")
+
+    except Exception as e:
+        print(f"Error processing the L5X file: {e}")
+
+# Example usage
+input_file = "/home/pedro/Documents/PLC_Program/Pembina_ENT_SITE_L73_L5X_File.L5X"  # Adjust path accordingly
+output_file = "/home/pedro/Documents/PLC_Program/Pembina_ENT_SITE_L73_L5X_File_Ident.L5X"
+format_l5x(input_file, output_file)
