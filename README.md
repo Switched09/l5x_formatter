@@ -13,3 +13,9 @@ With the full path of both .L5X files, the one to read and the final indented fi
 input_file =  "/home/user/Documents/PLC_Program/PLC_Program_L5X_File.L5X"          # Path for the Original L5X file
 output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Indent.L5X"    # Path for the Idented L5X file
 ```
+  
+  
+**To execute the python script:**
+```
+python main_L5X_ldent_Formatter.py
+```
