@@ -11,5 +11,5 @@ With the full path of both .L5X files, the one to read and the final indented fi
 ``` python
 # Example usage
 input_file =  "/home/user/Documents/PLC_Program/PLC_Program_L5X_File.L5X"          # Path for the Original L5X file
-output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Ident.L5X"    # Path for the Idented L5X file
+output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Indent.L5X"    # Path for the Idented L5X file
 ```
