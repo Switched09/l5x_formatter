@@ -2,9 +2,9 @@
 A Python script that reads a .L5X file (which is an XML-based file format used by Rockwell Automation for ControlLogix and CompactLogix PLC programs, then organizes its content in a more indented and readable XML format.
 
 ## Script Variables Preparation 
-Prior to run the script, update the content of the variables:\
-- **input_file**\
-- **output_file**\
+Prior to run the script, update the content of the variables: \
+- **input_file** \
+- **output_file** \
 \
 With the full path of both .L5X files, the one to read and the final indented file
 
