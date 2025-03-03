@@ -16,6 +16,6 @@ output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Indent.L5X"
   
   
 **To execute the python script:**
-```
+``` python
 python main_L5X_ldent_Formatter.py
 ```
