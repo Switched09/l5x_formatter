@@ -1,7 +1,7 @@
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 
-def format_l5x(input_file_param, output_file_parmp):
+def format_l5x(input_file_param, output_file_param):
     try:
         # Read and parse the XML content
         tree = ET.parse(input_file_param)
@@ -15,10 +15,10 @@ def format_l5x(input_file_param, output_file_parmp):
         formatted_xml = "\n".join([line for line in dom.toprettyxml(indent="    ").split("\n") if line.strip()])
 
         # Save formatted XML to the output file
-        with open(output_file_parmp, "w", encoding="utf-8") as f:
+        with open(output_file_param, "w", encoding="utf-8") as f:
             f.write(formatted_xml)
 
-        print(f"Formatted .L5X file saved to: {output_file_parmp}")
+        print(f"Formatted .L5X file saved to: {output_file_param}")
 
 
     except Exception as e:
