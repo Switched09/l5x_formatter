@@ -1,10 +1,10 @@
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 
-def format_l5x(input_file, output_file):
+def format_l5x(input_file_param, output_file_parmp):
     try:
         # Read and parse the XML content
-        tree = ET.parse(input_file)
+        tree = ET.parse(input_file_param)
         root = tree.getroot()
 
         # Convert XML to a formatted string
@@ -15,10 +15,10 @@ def format_l5x(input_file, output_file):
         formatted_xml = "\n".join([line for line in dom.toprettyxml(indent="    ").split("\n") if line.strip()])
 
         # Save formatted XML to the output file
-        with open(output_file, "w", encoding="utf-8") as f:
+        with open(output_file_parmp, "w", encoding="utf-8") as f:
             f.write(formatted_xml)
 
-        print(f"Formatted .L5X file saved to: {output_file}")
+        print(f"Formatted .L5X file saved to: {output_file_parmp}")
 
 
     except Exception as e:
@@ -26,5 +26,5 @@ def format_l5x(input_file, output_file):
 
 # Example usage
 input_file =  "/home/user/Documents/PLC_Program/PLC_Program_L5X_File.L5X"          # Path for the Original L5X file
-output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Indent.L5X"    # Path for the Idented L5X file
+output_file = "/home/user/Documents/PLC_Program/PLC_Program_L5X_File_Indent.L5X"    # Path for the Indented L5X file
 format_l5x(input_file, output_file)
